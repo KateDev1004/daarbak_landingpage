@@ -16,6 +16,11 @@
         src="./assets/img/header_image_with_text.png"
         alt="Daarbak Group"
         class="header-img"
+        srcset="
+          ./assets/img/header_image_with_text-mobile.png 1024w,
+          ./assets/img/header_image_with_text.png
+        "
+        sizes="(max-width: 1024px) 100%, 100%"
       />
     </header>
 
@@ -23,7 +28,12 @@
     <main>
       <section class="model">
         <div class="group-model">
-          <img src="./assets/img/model.png" alt="Daarbak Group model" />
+          <img
+            src="./assets/img/model.png"
+            alt="Daarbak Group model"
+            srcset="./assets/img/model-mobile.png 1024w, ./assets/img/model.png"
+            sizes="(max-width: 1024px) 100%, 100%"
+          />
         </div>
       </section>
 

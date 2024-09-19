@@ -101,6 +101,10 @@ body {
   position: absolute;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
 .redoffice {
   background-color: #f3716d;
 }
@@ -151,26 +155,66 @@ main {
 
 @media (max-width: 1024px) {
   .unit-box {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .unit-box div {
-    width: 100%;
+    img {
+      width: 400px;
+      height: 400px;
+    }
+    gap: 50px;
+    h3 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 }
 
-/* Responsive */
+@media (max-width: 960px) {
+  .unit-box-container {
+    padding: 100px !important;
+  }
+
+  .unit-box {
+    img,
+    div {
+      width: 100%;
+      height: auto;
+    }
+    text-align: center;
+
+    button {
+      position: relative;
+      margin-top: 40px;
+    }
+    h3 {
+      font-size: 35px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+
+  /* Even items (2nd, 4th, etc.) */
+  .unit-box-container:nth-child(odd) {
+    .unit-box {
+      flex-direction: column-reverse; /* Keep original order */
+    }
+  }
+
+  /* Odd items (1st, 3rd, etc.) */
+  .unit-box-container:nth-child(even) {
+    .unit-box {
+      flex-direction: column-reverse; /* Reverse the order */
+    }
+  }
+}
+
 @media (max-width: 768px) {
-  .header-text h1 {
-    font-size: 1.8rem;
+  .unit-box-container {
+    padding: 52px 42px !important;
   }
 
-  .header-text p {
-    font-size: 1.2rem;
-  }
-
-  .business-unit {
-    grid-template-columns: 1fr;
+  .unit-box {
+    gap: 30px;
   }
 }
