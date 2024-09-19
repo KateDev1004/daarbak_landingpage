@@ -32,15 +32,17 @@ body {
 
 /* Even items (2nd, 4th, etc.) */
 .unit-box-container:nth-child(odd) {
-  background-color: rbga(163, 164, 164, 0.12);
+  background-color: rgba(163, 164, 164, 0.12); /* Fixed rgba typo */
   padding-top: 98px;
   padding-bottom: 98px;
-  .unit-box {
-    flex-direction: row;
-    button {
-      right: 0;
-    }
-  }
+}
+
+.unit-box-container:nth-child(odd) .unit-box {
+  flex-direction: row;
+}
+
+.unit-box-container:nth-child(odd) .unit-box button {
+  right: 0;
 }
 
 /* Odd items (1st, 3rd, etc.) */
@@ -48,17 +50,19 @@ body {
   background-color: white;
   padding-top: 156px;
   padding-bottom: 156px;
-  .unit-box {
-    flex-direction: row-reverse;
-  }
+}
+
+.unit-box-container:nth-child(even) .unit-box {
+  flex-direction: row-reverse;
 }
 
 .unit-box {
   display: flex;
   gap: 245px;
-  div {
-    position: relative;
-  }
+}
+
+.unit-box div {
+  position: relative;
 }
 
 .unit-box img {
@@ -124,82 +128,91 @@ main {
   margin-bottom: 259px;
 }
 
+/* Responsive Styles */
+
+/* Between 1920px and 1200px */
 @media (max-width: 1920px) and (min-width: 1200px) {
   .unit-box {
     gap: calc(245px * (100vw / 1920));
   }
 }
 
+/* Between 1600px and 1300px */
 @media (max-width: 1600px) and (min-width: 1300px) {
   .unit-box {
     gap: 150px;
   }
 }
 
+/* Between 1300px and 1200px */
 @media (max-width: 1300px) and (min-width: 1200px) {
   .unit-box {
     gap: 100px;
   }
 }
 
+/* Between 1200px and 1024px */
 @media (max-width: 1200px) and (min-width: 1024px) {
   .unit-box {
     gap: 50px;
   }
 }
 
+/* Between 1024px and smaller */
 @media (max-width: 1024px) {
+  .unit-box img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .unit-box h3 {
+    font-size: 28px;
+  }
+
+  .unit-box p {
+    font-size: 16px;
+  }
+
   .unit-box {
-    img {
-      width: 400px;
-      height: 400px;
-    }
-    h3 {
-      font-size: 28px;
-    }
-    p {
-      font-size: 16px;
-    }
     gap: 50px;
   }
 }
 
+/* Max-width 960px */
 @media (max-width: 960px) {
   .unit-box-container {
     padding: 100px !important;
   }
 
+  .unit-box img,
+  .unit-box div {
+    width: 100%;
+    height: auto;
+  }
+
   .unit-box {
-    img,
-    div {
-      width: 100%;
-      height: auto;
-    }
     text-align: center;
-
-    button {
-      position: relative;
-      margin-top: 40px;
-    }
-    h3 {
-      font-size: 35px;
-    }
-    p {
-      font-size: 18px;
-    }
   }
 
-  /* Even items (2nd, 4th, etc.) */
-  .unit-box-container:nth-child(odd) {
-    .unit-box {
-      flex-direction: column-reverse;
-    }
+  .unit-box button {
+    position: relative;
+    margin-top: 40px;
   }
 
-  .unit-box-container:nth-child(even) {
-    .unit-box {
-      flex-direction: column-reverse;
-    }
+  .unit-box h3 {
+    font-size: 35px;
+  }
+
+  .unit-box p {
+    font-size: 18px;
+  }
+
+  .unit-box-container:nth-child(odd) .unit-box {
+    flex-direction: column-reverse;
+  }
+
+  .unit-box-container:nth-child(even) .unit-box {
+    flex-direction: column-reverse;
   }
 
   main {
@@ -207,6 +220,7 @@ main {
   }
 }
 
+/* Max-width 768px */
 @media (max-width: 768px) {
   .unit-box-container {
     padding: 52px 42px !important;
