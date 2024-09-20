@@ -41,7 +41,7 @@ body {
   flex-direction: row;
 }
 
-.unit-box-container:nth-child(odd) .unit-box button {
+.unit-box-container:nth-child(odd) .unit-box a {
   right: 0;
 }
 
@@ -92,7 +92,7 @@ body {
   font-weight: 400;
 }
 
-.unit-box button {
+.unit-box a {
   padding: 22px 45px;
   border-radius: 50px;
   border: none;
@@ -102,9 +102,10 @@ body {
   line-height: 25px;
   bottom: 0;
   position: absolute;
+  text-decoration: none;
 }
 
-button:hover {
+a:hover {
   opacity: 0.8;
 }
 
@@ -120,7 +121,7 @@ button:hover {
   background-color: #2f3041;
 }
 
-.genanvendelse button {
+.genanvendelse a {
   background-color: #003d3a;
 }
 
@@ -194,7 +195,7 @@ main {
     text-align: center;
   }
 
-  .unit-box button {
+  .unit-box a {
     position: relative;
     margin-top: 40px;
   }
